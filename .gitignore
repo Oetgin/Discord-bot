@@ -1,5 +1,5 @@
 # Ignore the configuration file so that the bot token isn't copied
-configuration.json
+
 
 # Ignore IDE specific files
 .idea/
