@@ -8,6 +8,7 @@ from discord.ext import commands
 import json
 import os
 
+
 # Get configuration.json
 with open("configuration.json", "r") as config: 
 	data = json.load(config)
@@ -25,9 +26,17 @@ intents = discord.Intents.default()
 # The bot
 bot = commands.Bot(prefix, intents = intents)
 
+
+# Get the absolute path of a file
+def getabsolute(file):
+	script_dir = os.path.dirname(__file__) # <-- absolute dir the script is in
+	rel_path = file
+	abs_file_path = os.path.join(script_dir, rel_path)
+	return abs_file_path
+
 # Load cogs
 if __name__ == '__main__':
-	for filename in os.listdir("Cogs"):
+	for filename in os.listdir(getabsolute("Cogs")):
 		if filename.endswith(".py"):
 			bot.load_extension(f"Cogs.{filename[:-3]}")
 
