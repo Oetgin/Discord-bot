@@ -16,7 +16,7 @@ class InviteCog(commands.Cog, name="invite command"):
         # Creating invite link
          invitelink = await ctx.channel.create_invite()
         # Dming it to the person 
-         await ctx.send(invitelink)
+         await ctx.send("Do you want to invite comrades to your server ? Use this link : " + invitelink)
 
 def setup(bot:commands.Bot):
 	bot.add_cog(InviteCog(bot))
