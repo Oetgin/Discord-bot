@@ -1,3 +1,6 @@
+# This program is the help command for my discord bot, MARX
+# Copyright (C) 2021  Oetgin
+
 import discord
 from discord.ext import commands
 from random import randint

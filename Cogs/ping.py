@@ -1,3 +1,6 @@
+# This program is the ping command for my discord bot, MARX
+# Copyright (C) 2021  Oetgin
+
 from discord.ext import commands
 import time
 

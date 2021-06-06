@@ -1,3 +1,6 @@
+# This program is the command error for my discord bot, MARX
+# Copyright (C) 2021  Oetgin
+
 from discord.ext import commands
 from discord.ext.commands import MissingPermissions, CheckFailure, CommandNotFound
 
