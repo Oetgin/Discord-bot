@@ -8,8 +8,9 @@ from discord.ext import commands
 import json
 import os
 
+
 # Get configuration.json
-with open("Config\configuration.json", "r") as config: 
+with open("configuration.json", "r") as config: 
 	data = json.load(config)
 	token = data["token"]
 	prefix = data["prefix"]
