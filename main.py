@@ -7,6 +7,7 @@ import discord
 from discord.ext import commands
 import json
 import os
+import ctypes
 
 
 # Get configuration.json
@@ -14,6 +15,10 @@ with open("configuration.json", "r") as config:
 	data = json.load(config)
 	token = data["token"]
 	prefix = data["prefix"]
+
+
+# Change window title
+ctypes.windll.kernel32.SetConsoleTitleW("Discord bot - MARX")
 
 
 class Greetings(commands.Cog):
