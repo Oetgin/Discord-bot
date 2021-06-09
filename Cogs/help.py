@@ -4,17 +4,25 @@
 import discord
 from discord.ext import commands
 from random import randint
+import json
 
 class HelpCog(commands.Cog, name="help command"):
 	def __init__(self, bot:commands.Bot):
 		self.bot = bot
-  
+
 
 	@commands.command(name = 'help',
 					usage="(commandName)",
 					description = "Display the help message.")
 	@commands.cooldown(1, 2, commands.BucketType.member)
 	async def help (self, ctx, commandName:str=None):
+		with open("Cogs/commands_config.json", "r") as config:
+			data = json.load(config)
+			quote_config = data["help"]
+			if quote_config[0] == "0":
+				DeleteMessage = False
+			else:
+				DeleteMessage = True
 
 		commandName2 = None
 		stop = False
@@ -57,6 +65,8 @@ class HelpCog(commands.Cog, name="help command"):
 			embed.set_thumbnail(url=f'{self.bot.user.avatar_url}')
 			embed.add_field(name=f"__COMMANDS :__", value=f"**{self.bot.command_prefix}command <parameters>** : Command description.", inline=False)
 			await ctx.channel.send(embed=embed)
+		if DeleteMessage:
+			await ctx.message.delete()
 
 def setup(bot:commands.Bot):
 	bot.remove_command("help")
