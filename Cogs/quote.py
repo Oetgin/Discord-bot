@@ -13,7 +13,7 @@ class QuoteCog(commands.Cog, name="quote command"):
 
 	@commands.command(name = "quote",
 					usage="",
-					description = "Give a random quote of Karl Marx.")
+					description = "Give a random quote from Karl Marx.")
 	@commands.cooldown(1, 2, commands.BucketType.member)
 	async def quote(self, ctx):
 		with open("Cogs/commands_config.json", "r") as config:
