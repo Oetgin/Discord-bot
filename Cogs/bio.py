@@ -30,6 +30,7 @@ class BioCog(commands.Cog, name="bio command"):
  His name has been used as an adjective, a noun, and a school of social theory. (Source : https://en.wikipedia.org/wiki/Karl_Marx)")
 		if DeleteMessage:
 			await ctx.message.delete()
+		print(f"{ctx.author} used the bio command")
 
 def setup(bot:commands.Bot):
 	bot.add_cog(BioCog(bot))

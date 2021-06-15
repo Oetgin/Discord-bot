@@ -39,6 +39,8 @@ class QuoteCog(commands.Cog, name="quote command"):
 		message = await ctx.send("> " + quote)
 		if DeleteMessage:
 			await ctx.message.delete()
+		quote = quote[2:2]
+		print(f"{ctx.author} used the quote command (quote : {quote})")
 
 
 def setup(bot:commands.Bot):

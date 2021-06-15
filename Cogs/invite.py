@@ -27,6 +27,7 @@ class InviteCog(commands.Cog, name="invite command"):
 		await ctx.send("Do you want to invite comrades to your server ? Use this link : " + str(invitelink))
 		if DeleteMessage:
 			await ctx.message.delete()
+		print(f"{ctx.author} used the invite command (invite link : {invitelink})")
 
 def setup(bot:commands.Bot):
 	bot.add_cog(InviteCog(bot))

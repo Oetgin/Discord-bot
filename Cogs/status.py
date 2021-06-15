@@ -24,6 +24,7 @@ class StatusCog(commands.Cog, name="status command"):
 		message = await ctx.send("The bot is currently in developpment. Many commands are not finished. Commands in developpment : ban - unban - invite_tracker.")
 		if DeleteMessage:
 			await ctx.message.delete()
+		print(f"{ctx.author} used the status command")
 
 def setup(bot:commands.Bot):
 	bot.add_cog(StatusCog(bot))

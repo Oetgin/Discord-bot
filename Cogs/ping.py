@@ -28,6 +28,7 @@ class PingCog(commands.Cog, name="ping command"):
 		await message.edit(content=f"🏓 Pong !  `{int(ping)} ms`")
 		if DeleteMessage:
 			await ctx.message.delete()
+		print(f"{ctx.author} used the ping command (ping : {int(ping)} ms)")
 
 def setup(bot:commands.Bot):
 	bot.add_cog(PingCog(bot))
